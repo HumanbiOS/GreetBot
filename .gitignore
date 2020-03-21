@@ -127,3 +127,9 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+
+# intellij data
+.idea
+
+# bot configuration
+config.py
