@@ -12,7 +12,7 @@ logger = logging.getLogger(__name__)
 
 def greet(update, context):
     """Sends a greeting message to the user who joined!"""
-    welcome_text = "Hallo {}, wilkommen in der Human Bios Entwickler Gruppe!"
+    welcome_text = config.GREET_TEXT
     update.message.reply_text(welcome_text.format(update.effective_user.first_name))
 
 
@@ -23,7 +23,8 @@ updater.dispatcher.add_handler(greeting_handler)
 
 # Config for webhook - if not set we are using long polling
 if config.USE_WEBHOOK:
-    updater.start_webhook(listen="127.0.0.1", port=config.WEBHOOK_PORT, url_path=config.BOT_TOKEN, cert=config.CERTPATH, webhook_url=config.WEBHOOK_URL)
+    updater.start_webhook(listen="127.0.0.1", port=config.WEBHOOK_PORT, url_path=config.BOT_TOKEN, cert=config.CERTPATH,
+                          webhook_url=config.WEBHOOK_URL)
     updater.bot.set_webhook(config.WEBHOOK_URL)
 else:
     updater.start_polling()
