@@ -26,7 +26,7 @@ welcome_text = "Hallo {}, " \
                "- A doctor who is mentally overwhelmed may need to speak to a psychologist briefly\n" \
                "In the first step, we simply want to build a bot that, based on two questions, classifies the person as either \"medical need\" or \"psychological need\".\n" \
                "- Who we are https://humanbios.org/#/\n" \
-               "- GitHub https://hackmd.io/p0vKHdtAR4C1ygXadeTncA?view\n" \
+               "- GitHub https://github.com/HumanbiOS\n" \
                "Talk to @TobiasHeldt if you want to join.\n"
 
 
