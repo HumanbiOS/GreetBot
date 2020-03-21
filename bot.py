@@ -16,8 +16,8 @@ welcome_text = "Hallo {}, " \
                "- Ein Patient in Indien kann vielleicht im Moment keinen Arzt bei sich kontaktieren und nutzt unseren Bot, um mit einem Arzt in Italien zu sprechen\n" \
                "- Ein Arzt, der psychisch ueberfordert ist, muss vielleicht kurz mit einem Psychologen sprechen\n" \
                "Im ersten Schritt, wollen wir einfach einen Bot bauen, der anhand von zwei Fragen, die Person entweder als \"medizinischen Bedarf\" oder als \"psychologischen Bedarf\" einstuft.\n" \
-               "Eine kurze Beschreibung findest Du hier https://humanbios.org/#/\n" \
-               "Eine Spec findest Du hier https://hackmd.io/p0vKHdtAR4C1ygXadeTncA?view\n" \
+               "- Wer wir sind https://humanbios.org/#/\n" \
+               "- GitHub https://github.com/HumanbiOS\n" \
                "Sprich gerne @TobiasHeldt an, wenn Du mitmachen willst.\n\n" \
                "Hi {}, " \
                "nice that you're here.\n" \
@@ -25,8 +25,8 @@ welcome_text = "Hallo {}, " \
                "- A patient in India may be unable to contact a doctor at the moment and is using our bot to speak to a doctor in Italy\n" \
                "- A doctor who is mentally overwhelmed may need to speak to a psychologist briefly\n" \
                "In the first step, we simply want to build a bot that, based on two questions, classifies the person as either \"medical need\" or \"psychological need\".\n" \
-               "You can find a short description here https://humanbios.org/#/\n" \
-               "You can find a spec here https://hackmd.io/p0vKHdtAR4C1ygXadeTncA?view\n" \
+               "- Who we are https://humanbios.org/#/\n" \
+               "- GitHub https://hackmd.io/p0vKHdtAR4C1ygXadeTncA?view\n" \
                "Talk to @TobiasHeldt if you want to join.\n"
 
 
