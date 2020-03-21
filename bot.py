@@ -13,7 +13,7 @@ logger = logging.getLogger(__name__)
 def greet(update, context):
     """Sends a greeting message to the user who joined!"""
     welcome_text = "Hallo {}, wilkommen in der Human Bios Entwickler Gruppe!"
-    update.message.reply_text(welcome_text)
+    update.message.reply_text(welcome_text.format(update.effective_user.first_name))
 
 
 updater = Updater(token=config.BOT_TOKEN, use_context=True)
