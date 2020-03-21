@@ -36,17 +36,26 @@ def greet(update, _context):
     update.message.reply_text(welcome_text.format(new_member_name, new_member_name))
 
 
-updater = Updater(token=os.getenv("TOKEN"), use_context=True)
+TOKEN = os.getenv("TOKEN")
+ENV = os.getenv("ENV")
+
+updater = Updater(token=TOKEN, use_context=True)
 
 greeting_handler = MessageHandler(Filters.group & Filters.status_update.new_chat_members, greet)
 updater.dispatcher.add_handler(greeting_handler)
 
-# Config for webhook - if not set we are using long polling
-if config.USE_WEBHOOK:
-    updater.start_webhook(listen="127.0.0.1", port=config.WEBHOOK_PORT, url_path=config.BOT_TOKEN, cert=config.CERTPATH,
-                          webhook_url=config.WEBHOOK_URL)
-    updater.bot.set_webhook(config.WEBHOOK_URL)
+if ENV == "prod":
+    port = int(os.environ.get("PORT", "8443"))
+    app_name = os.environ.get("HEROKU_APP_NAME")
+    updater.start_webhook(listen="0.0.0.0", port=port, url_path=TOKEN)
+    updater.bot.set_webhook("https://{}.herokuapp.com/{}".format(app_name, TOKEN))
 else:
-    updater.start_polling()
+    if config.USE_WEBHOOK:
+        updater.start_webhook(listen="127.0.0.1", port=config.WEBHOOK_PORT, url_path=config.BOT_TOKEN,
+                              cert=config.CERTPATH,
+                              webhook_url=config.WEBHOOK_URL)
+        updater.bot.set_webhook(config.WEBHOOK_URL)
+    else:
+        updater.start_polling()
 
-updater.idle()
+    updater.idle()
